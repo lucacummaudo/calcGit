@@ -21,6 +21,10 @@ namespace WpfCalculatrice
     public partial class MainWindow : Window
     {
         private Addition addition;
+        private Soustraction soustraction;
+        private Multiplication multiplication;
+        private Division division;
+
         public MainWindow() //Constructeur
         {
             InitializeComponent();
@@ -55,17 +59,77 @@ namespace WpfCalculatrice
 
         private void btnSub_Click(object sender, RoutedEventArgs e)
         {
+            double dblNumber1;
+            double dblNumber2;
 
+            if (double.TryParse(tbxNumber1.Text, out dblNumber1)) //Si il a réussi à convertir tbxNumber2 en string, il met le contenu dans dblNumber1
+            {
+                if (double.TryParse(tbxNumber2.Text, out dblNumber2)) //Si il a réussi à convertir tbxNumber2 en string, il met le contenu dans dblNumber2
+                {
+                    soustraction.setVal1(dblNumber1);
+                    soustraction.setVal2(dblNumber2);
+                    lblResponse.Content = soustraction.Soustrait();
+                    MessageBox.Show(soustraction.Affiche());
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez controler le format des nombre saisis", "Erreur lors de la conversion", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez controler le format des nombre saisis", "Erreur lors de la conversion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btnMul_Click(object sender, RoutedEventArgs e)
         {
+            double dblNumber1;
+            double dblNumber2;
 
+            if (double.TryParse(tbxNumber1.Text, out dblNumber1)) //Si il a réussi à convertir tbxNumber2 en string, il met le contenu dans dblNumber1
+            {
+                if (double.TryParse(tbxNumber2.Text, out dblNumber2)) //Si il a réussi à convertir tbxNumber2 en string, il met le contenu dans dblNumber2
+                {
+                    multiplication.setVal1(dblNumber1);
+                    multiplication.setVal2(dblNumber2);
+                    lblResponse.Content = multiplication.Multipli();
+                    MessageBox.Show(multiplication.Affiche());
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez controler le format des nombre saisis", "Erreur lors de la conversion", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez controler le format des nombre saisis", "Erreur lors de la conversion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btnDiv_Click(object sender, RoutedEventArgs e)
         {
+            double dblNumber1;
+            double dblNumber2;
 
+            if (double.TryParse(tbxNumber1.Text, out dblNumber1)) //Si il a réussi à convertir tbxNumber2 en string, il met le contenu dans dblNumber1
+            {
+                if (double.TryParse(tbxNumber2.Text, out dblNumber2)) //Si il a réussi à convertir tbxNumber2 en string, il met le contenu dans dblNumber2
+                {
+                    division.setVal1(dblNumber1);
+                    division.setVal2(dblNumber2);
+                    lblResponse.Content = division.Divise();
+                    MessageBox.Show(division.Affiche());
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez controler le format des nombre saisis", "Erreur lors de la conversion", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez controler le format des nombre saisis", "Erreur lors de la conversion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
