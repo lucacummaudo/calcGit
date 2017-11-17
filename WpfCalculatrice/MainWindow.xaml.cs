@@ -21,14 +21,15 @@ namespace WpfCalculatrice
     public partial class MainWindow : Window
     {
         private Addition addition;
-        private Soustraction soustraction;
-        private Multiplication multiplication;
+       // private Soustraction soustraction;
+        //private Multiplication multiplication;
         private Division division;
 
         public MainWindow() //Constructeur
         {
             InitializeComponent();
             addition = new Addition(33, 5); //Instanciation
+            division = new Division(4 , 2);
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -66,10 +67,10 @@ namespace WpfCalculatrice
             {
                 if (double.TryParse(tbxNumber2.Text, out dblNumber2)) //Si il a réussi à convertir tbxNumber2 en string, il met le contenu dans dblNumber2
                 {
-                    soustraction.setVal1(dblNumber1);
-                    soustraction.setVal2(dblNumber2);
-                    lblResponse.Content = soustraction.Soustrait();
-                    MessageBox.Show(soustraction.Affiche());
+                    //soustraction.setVal1(dblNumber1);
+                    //soustraction.setVal2(dblNumber2);
+                    //lblResponse.Content = soustraction.Soustrait();
+                    //MessageBox.Show(soustraction.Affiche());
                 }
                 else
                 {
@@ -91,10 +92,10 @@ namespace WpfCalculatrice
             {
                 if (double.TryParse(tbxNumber2.Text, out dblNumber2)) //Si il a réussi à convertir tbxNumber2 en string, il met le contenu dans dblNumber2
                 {
-                    multiplication.setVal1(dblNumber1);
-                    multiplication.setVal2(dblNumber2);
-                    lblResponse.Content = multiplication.Multipli();
-                    MessageBox.Show(multiplication.Affiche());
+                    //multiplication.setVal1(dblNumber1);
+                    //multiplication.setVal2(dblNumber2);
+                    //lblResponse.Content = multiplication.Multipli();
+                    //MessageBox.Show(multiplication.Affiche());
                 }
                 else
                 {
@@ -118,7 +119,7 @@ namespace WpfCalculatrice
                 {
                     division.setVal1(dblNumber1);
                     division.setVal2(dblNumber2);
-                    lblResponse.Content = division.Divise();
+                    lblResponse.Content = division.Divisionne();
                     MessageBox.Show(division.Affiche());
                 }
                 else
