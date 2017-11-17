@@ -129,6 +129,7 @@ namespace WpfCalculatrice
             }
             else
             {
+
                 MessageBox.Show("Veuillez controler le format des nombre saisis", "Erreur lors de la conversion", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
