@@ -21,15 +21,18 @@ namespace WpfCalculatrice
     public partial class MainWindow : Window
     {
         private Addition addition;
+
        // private Soustraction soustraction;
-        //private Multiplication multiplication;
         private Division division;
+        private Multiplication multiplication;
 
         public MainWindow() //Constructeur
         {
             InitializeComponent();
-            addition = new Addition(33, 5); //Instanciation
-            division = new Division(4 , 2);
+            addition = new Addition(0, 0); //Instanciation
+            //soustraction = new Soustraction(0, 0); //Instanciation
+            multiplication = new Multiplication(0, 0); //Instanciation
+            //division = new Division(0, 0); //Instanciation
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
